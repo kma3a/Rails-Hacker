@@ -1,8 +1,20 @@
 HackerNews::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+    get 'posts' => 'posts#index'
+    get 'posts/:id' => 'posts#show'
+    post 'posts' => 'posts#create'
+    get 'posts/new' => 'posts#new'
+    get 'posts/:id/edit' => 'posts#edit'
+    put 'posts/:id' => 'posts#update'
+    delete 'posts/:id' => 'posts#destroy'
 
-  # You can have the root of your site routed with "root"
+    get 'users/:id' => 'users#show'
+    get 'users/new' => 'users#new'
+    post 'users' => 'users#create'
+
+
+     # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
   # Example of regular route:
