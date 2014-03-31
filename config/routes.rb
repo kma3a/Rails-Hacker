@@ -1,11 +1,12 @@
 HackerNews::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-    get 'posts' => 'posts#index', :as => :posts_path
+    get 'posts' => 'posts#index'
     get 'posts/:id' => 'posts#show', :as => :post
     post 'posts' => 'posts#create'
-    get 'posts/new' => 'posts#new'
-    get 'posts/:id/edit' => 'posts#edit'
+    get 'post/new' => 'posts#new'
+    get 'posts/:id/edit' => 'posts#edit', :as => :edit_post
+    patch 'posts/:id' => 'posts#update'
     put 'posts/:id' => 'posts#update'
     delete 'posts/:id' => 'posts#destroy'
 
