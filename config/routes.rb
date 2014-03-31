@@ -1,8 +1,8 @@
 HackerNews::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-    get 'posts' => 'posts#index'
-    get 'posts/:id' => 'posts#show'
+    get 'posts' => 'posts#index', :as => :posts_path
+    get 'posts/:id' => 'posts#show', :as => :post
     post 'posts' => 'posts#create'
     get 'posts/new' => 'posts#new'
     get 'posts/:id/edit' => 'posts#edit'
@@ -12,6 +12,10 @@ HackerNews::Application.routes.draw do
     get 'users/:id' => 'users#show'
     get 'users/new' => 'users#new'
     post 'users' => 'users#create'
+
+    # namespace 'posts/:post_id' do
+    #   get 'comments' => "comments#index"
+    # end
 
 
      # You can have the root of your site routed with "root"

@@ -1,0 +1,19 @@
+
+
+<h1> Post #<%=@post.id%> </h1>
+
+<li>
+
+  <%= link_to @post.title, @post.url %>
+
+  <%@post.comments.each do |comment|%>
+
+    <%=comment.text%>
+
+    <%=comment.user.username%>
+
+    <%end%>
+
+</li>
+
+<%= link_to 'Back', posts_path %>
