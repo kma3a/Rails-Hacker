@@ -10,9 +10,13 @@ HackerNews::Application.routes.draw do
     put 'posts/:id' => 'posts#update'
     delete 'posts/:id' => 'posts#destroy'
 
-    get 'users/:id' => 'users#show'
-    get 'users/new' => 'users#new'
+    get 'users/:id' => 'users#show', :as => :user
+    get 'user/new' => 'users#new'
     post 'users' => 'users#create'
+
+    post 'signin' => 'sessions#create'
+    delete 'signout' => 'sessions#destroy'
+
 
     # namespace 'posts/:post_id' do
     #   get 'comments' => "comments#index"

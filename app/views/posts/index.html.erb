@@ -1,6 +1,11 @@
 <% content_for :sidebar do %>
-  <h1>This is great!</h1>
-<% end %>
+  <%if session[:id] %>
+    <p><%= link_to "logout", signout_path %></p>
+  <%else%>
+    <p><%= link_to "sign-in/sign-up", user_new_path %></p>
+  <%end%>
+
+<%end%>
 
 <h1> POST INDEX </h1>
 
